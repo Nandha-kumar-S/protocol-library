@@ -1,0 +1,26 @@
+# Configuration for the OpenAI models used by the pipeline
+#
+# The CHOSEN_MODEL variable specifies the name of the model to use for inference
+# The MODE variable specifies whether to use the 'openai' library or the 'request' library to make requests to the model
+#
+# The OPENAI_GPTO3_MINI and OPENAI_GPT4O_MINI sections contain the configuration for the OpenAI models
+# These sections include the API key and endpoint for the models, as well as the API version and deployment name
+#
+# The common_azure_config section contains the API key and endpoint for the 'request' library
+
+common_azure_config: &common_azure_config
+  api_key: '{{OPENAI_AZURE_API_KEY}}'
+  api_endpoint: '{{OPENAI_AZURE_API_ENDPOINT}}'
+
+CHOSEN_MODEL: 'OPENAI_GPT4O_MINI'
+MODE: 'request'
+
+
+OPENAI_GPTO3_MINI:
+  <<: *common_azure_config
+  api_version: '{{OPENAI_GPTO3_MINI_API_VERSION}}'
+  deployment_name: '{{OPENAI_GPTO3_MINI_DEPLOYMENT_NAME}}'
+
+OPENAI_GPT4O_MINI:
+  api_key: "{{OPENAI_GPT4O_MINI_API_KEY}}"
+  api_endpoint: "{{OPENAI_GPT4O_MINI_API_ENDPOINT}}"

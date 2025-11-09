@@ -1,0 +1,26 @@
+# FastAPI and server
+fastapi==0.104.1
+uvicorn==0.24.0.post1
+
+# Request handling
+python-multipart==0.0.6  # For handling file uploads and form data
+
+# Data validation and settings management
+pydantic==2.5.2
+pydantic-settings==2.1.0
+
+# CORS middleware
+starlette==0.27.0
+
+# Type checking
+typing-extensions==4.8.0
+
+# For JSON handling and file operations
+python-jose==3.3.0  # For JWT tokens if needed
+python-dateutil==2.8.2
+
+# Database
+sqlalchemy==2.0.23       # SQL ORM
+sqlalchemy-serializer==1.4.1  # For SQLAlchemy model serialization
+psycopg2-binary==2.9.9  # PostgreSQL adapter
+python-dotenv==1.0.0    # For .env file handling
