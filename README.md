@@ -2,7 +2,7 @@
 
 ## 1. Project Description
 
-The Protocol Library is a full-stack application designed to solve a critical bottleneck in the clinical trial industry. It leverages AI to automatically parse unstructured clinical trial protocol documents and convert them into the **CDISC USDM (Universal Study Definition Model)**, a globally recognized, machine-readable standard.
+The Protocol Library is a full-stack application designed to solve a critical bottleneck in the clinical trial industry. It leverages AI to automatically parse unstructured clinical trial protocol documents and convert them into the **CDISC USDM (Unified Study Definition Model)**, a globally recognized, machine-readable standard.
 
 This creates a "digital twin" of the protocol, enabling downstream automation, improving data quality, and accelerating the entire clinical trial lifecycle.
 
