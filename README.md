@@ -49,13 +49,17 @@ To run this project, you will need to start both the backend server and the fron
     pip install -r ../requirements.txt
     ```
 
-4.  **Configure Environment Variables (IMPORTANT):**
-    The current `backend/ml/config/llm_models.yaml` file contains hardcoded API keys. This is a security risk. It is strongly recommended to remove them and use environment variables.
+4.  **Configure Environment Variables:**
+    `backend/ml/config/llm_models.yaml` holds `{{PLACEHOLDER}}` tokens rather than
+    literal credentials — no keys are committed. Supply your own Azure OpenAI
+    values through the environment before running the pipeline.
 
-    Create a `.env` file in the `backend` directory and add your keys:
+    Create a `.env` file in the `backend` directory:
     ```
-    OPENAI_API_KEY=your_openai_api_key_here
-    AZURE_API_ENDPOINT=your_azure_endpoint_here
+    OPENAI_AZURE_API_KEY=your_azure_openai_key_here
+    OPENAI_AZURE_API_ENDPOINT=your_azure_endpoint_here
+    OPENAI_GPT4O_MINI_API_KEY=your_azure_openai_key_here
+    OPENAI_GPT4O_MINI_API_ENDPOINT=your_azure_endpoint_here
     ```
 
 5.  **Run the server:**

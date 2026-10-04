@@ -1,5 +1,4 @@
 import os
-import json
 import time
 import logging
 
@@ -25,17 +24,6 @@ def main(protocol_path, output_dir):
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
-    '''with open("output/Alexion/section_schema_map.json", "r") as f:
-        section_schema_map = json.load(f)
-    with open("output/Alexion/preprocessed_pdf.json", "r") as f:
-        preprocessed_pdf = json.load(f)
-    with open("output/Alexion/extracted_content.json", "r") as f:
-        extracted_content = json.load(f)
-    with open("output/Pfizer/extracted_content.json", "r") as f:
-        extracted_content = json.load(f)
-    with open("output/lzzt/structured_pdf.json", "r") as f:
-        structured_pdf = json.load(f)'''
-    
     # Parse the PDF
     pdf_parser = PDFParser(protocol_path)
     markdown_file, structured_pdf = pdf_parser.parse()

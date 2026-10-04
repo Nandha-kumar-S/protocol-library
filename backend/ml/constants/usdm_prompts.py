@@ -319,7 +319,7 @@ Review the example provided to understand how the input is interpreted and how t
 JSON
 {
   "title": "Contact Information",
-  "extracted_text": "Sponsor: Alexion Pharmaceuticals, Inc.Address: 121 Seaport Boulevard, Boston, MA 02210, USA"
+  "extracted_text": "Sponsor: Examplar Therapeutics, Inc.Address: 100 Example Way, Cambridge, MA 02142, USA"
 }
 """
 
@@ -328,14 +328,14 @@ JSON
 "legalAddress": {
               "id": "Address_1",
               "extensionAttributes": [],
-              "text": "121 Seaport Boulevard, Boston, , MA, 02210, United States of America",
+              "text": "100 Example Way, Cambridge, , MA, 02142, United States of America",
               "lines": [
-                "121 Seaport Boulevard"
+                "100 Example Way"
               ],
-              "city": "Boston",
+              "city": "Cambridge",
               "district": "",
               "state": "MA",
-              "postalCode": "02210",
+              "postalCode": "02142",
               "country": {
                 "id": "CNCIt_001",
                 "extensionAttributes": [],
@@ -379,7 +379,7 @@ Review the provided examples to see how each nested object (Quantity, AliasCode,
 JSON
 {
   "title": "4.3. Justification for Dose",
-  "extracted_text": "1: ALXN1840 at 60 mg single dose has been shown to have an adequate safety profile and be well-tolerated in healthy participants.2: In the Phase 2 Study WTX101-201, daily ALXN1840 doses were 15 mg for 6 participants, 30 mg for 13 participants, and 60 mg for 9 participants at Week 24"
+  "extracted_text": "1: EXT1840 at 60 mg single dose has been shown to have an adequate safety profile and be well-tolerated in healthy participants.2: In the Phase 2 Study WTX101-201, daily EXT1840 doses were 15 mg for 6 participants, 30 mg for 13 participants, and 60 mg for 9 participants at Week 24"
 }
 """
 
@@ -482,7 +482,7 @@ JSON
                 "extensionAttributes": [],
                 "name": "30_MG",
                 "label": "",
-                "description": "30 mg/day (administered as 2 \u00d7 15 mg ALXN1840 tablets)",
+                "description": "30 mg/day (administered as 2 \u00d7 15 mg EXT1840 tablets)",
                 "duration": {
                   "id": "Duration_2",
                   "extensionAttributes": [],
@@ -599,7 +599,7 @@ Review the example provided to understand how the input is interpreted and how t
 JSON
 {
   "title": "6.4 Study Intervention",
-  "extracted_text": "The investigational medicinal product, ALXN1840, is provided as 15 mg tablets for oral administration. It is a chelating agent and a zinc-based molecule. The product is centrally sourced."
+  "extracted_text": "The investigational medicinal product, EXT1840, is provided as 15 mg tablets for oral administration. It is a chelating agent and a zinc-based molecule. The product is centrally sourced."
 }
 """
 
@@ -611,9 +611,9 @@ JSON
             "id": "AdministrableProduct_001",
             "instanceType": "AdministrableProduct",
             "extensionAttributes": null,
-            "name": "ALXN1840",
-            "description": "ALXN1840 is an investigational medicinal product provided as 15 mg tablets for oral administration.",
-            "label": "ALXN1840 15 mg Tablets",
+            "name": "EXT1840",
+            "description": "EXT1840 is an investigational medicinal product provided as 15 mg tablets for oral administration.",
+            "label": "EXT1840 15 mg Tablets",
             "administrableDoseForm": {
                 "id": "AliasCode_001",
                 "instanceType": "AliasCode",
@@ -661,7 +661,7 @@ Populate the USDM Schema: Fill the AdministrableProductIdentifier schema templat
 Final Output: Present the final output in a valid JSON format.
 Notes to keep in mind:
 Every class should have an extensionAttributes attribute which must be null, and an instanceType attribute that explicitly declares what the JSON object represents (e.g., "instanceType": "AdministrableProductIdentifier").
-The text attribute should contain the literal identifier string (e.g., "ALXN1840").
+The text attribute should contain the literal identifier string (e.g., "EXT1840").
 The scope attribute is a required relationship. You must link it to a pre-defined or newly created Organization object (e.g., an organization with the ID Organization_001). This is crucial because an identifier is assigned by an organization.
 If the protocol provides an identifier without explicitly naming the assigning organization, use a generic placeholder organization (e.g., Organization_Sponsor).
 Review the example provided to understand how the input is interpreted and how the output JSON should be structured.
@@ -671,7 +671,7 @@ Review the example provided to understand how the input is interpreted and how t
 JSON
 {
   "title": "Study Drug",
-  "extracted_text": "The study drug, known as ALXN1840, is manufactured by Alexion Pharmaceuticals, Inc."
+  "extracted_text": "The study drug, known as EXT1840, is manufactured by Examplar Therapeutics, Inc."
 }
 """
 
@@ -683,11 +683,11 @@ JSON
       "id": "AdministrableProductIdentifier_001",
       "instanceType": "AdministrableProductIdentifier",
       "extensionAttributes": null,
-      "text": "ALXN1840",
+      "text": "EXT1840",
       "scope": {
         "id": "Organization_001",
         "instanceType": "Organization",
-        "name": "Alexion Pharmaceuticals, Inc."
+        "name": "Examplar Therapeutics, Inc."
       }
     }
   ]
@@ -937,7 +937,7 @@ Review the example provided to understand how the input is interpreted and how t
 JSON
 {
   "title": "Protocol Signature Page",
-  "extracted_text": "Study Sponsor: Alexion Pharmaceuticals, Inc.Principal Investigator: Dr. Jane Doe, M.D., Department of Clinical Research"
+  "extracted_text": "Study Sponsor: Examplar Therapeutics, Inc.Principal Investigator: Dr. Jane Doe, M.D., Department of Clinical Research"
 }
 """
 
@@ -1832,7 +1832,7 @@ Final Output: Present the final output in a valid JSON format.
 
 Notes to Keep in Mind
 Every class should have an extensionAttributes attribute which must be null, and an instanceType attribute that explicitly declares what the JSON object represents (e.g., "instanceType": "Identifier").
-The text attribute should contain the literal identifier string (e.g., "NCT01234567" or "ALXN1840-C-201").
+The text attribute should contain the literal identifier string (e.g., "NCT01234567" or "EXT1840-C-201").
 The scope attribute is a mandatory relationship. You must link it to a pre-defined or newly created Organization object by its unique identifier (e.g., scope: { "id": "Organization_001" }). This object represents the assigning organization, such as a sponsor or registry.
 If the protocol provides an identifier without explicitly naming the assigning organization, use a generic placeholder organization (e.g., Organization_Sponsor or Organization_Registry).
 Review the example provided to understand how the input is interpreted and how the output JSON should be structured.
@@ -1842,7 +1842,7 @@ Review the example provided to understand how the input is interpreted and how t
 JSON
 {
   "title": "Protocol Identification",
-  "extracted_text": "Sponsor Protocol Number: ALXN1840-C-201ClinicalTrials.gov Identifier: NCT01234567"
+  "extracted_text": "Sponsor Protocol Number: EXT1840-C-201ClinicalTrials.gov Identifier: NCT01234567"
 }
 **
 """
@@ -1855,11 +1855,11 @@ JSON
       "id": "Identifier_001",
       "instanceType": "Identifier",
       "extensionAttributes": null,
-      "text": "ALXN1840-C-201",
+      "text": "EXT1840-C-201",
       "scope": {
         "id": "Organization_001",
         "instanceType": "Organization",
-        "name": "Alexion Pharmaceuticals, Inc."
+        "name": "Examplar Therapeutics, Inc."
       }
     },
     {
@@ -1908,7 +1908,7 @@ Review the example provided to understand how the input is interpreted and how t
 JSON
 {
   "title": "2.2 Background",
-  "extracted_text": "The development of ALXN1840 is for Wilson disease, a rare inherited disorder that causes copper to accumulate in the liver, brain, and other vital organs."
+  "extracted_text": "The development of EXT1840 is for Wilson disease, a rare inherited disorder that causes copper to accumulate in the liver, brain, and other vital organs."
 }
 """
 
@@ -1966,7 +1966,7 @@ Review the example provided to understand how the input is interpreted and how t
 JSON
 {
   "title": "Study Drug Formulation",
-  "extracted_text": "The study drug is composed of the active substance ALXN1840. The tablets also contain inactive ingredients like microcrystalline cellulose."
+  "extracted_text": "The study drug is composed of the active substance EXT1840. The tablets also contain inactive ingredients like microcrystalline cellulose."
 }
 """
 
@@ -1986,7 +1986,7 @@ JSON
         "id": "Substance_001",
         "instanceType": "Substance",
         "extensionAttributes": null,
-        "name": "ALXN1840"
+        "name": "EXT1840"
       }
     },
     {
@@ -2093,7 +2093,7 @@ Review the example provided to understand how the input is interpreted and how t
 JSON
 {
   "title": "4.1 Overall Design",
-  "extracted_text": "This is a Phase 2, open-label, multicenter, randomized clinical trial to assess the efficacy and safety of ALXN1840. The study population consists of adults with Wilson disease. The study includes a Screening Period, a Treatment Period, and a Follow-up Period. Patients will be randomized to one of two treatment arms: high dose or low dose."
+  "extracted_text": "This is a Phase 2, open-label, multicenter, randomized clinical trial to assess the efficacy and safety of EXT1840. The study population consists of adults with Wilson disease. The study includes a Screening Period, a Treatment Period, and a Follow-up Period. Patients will be randomized to one of two treatment arms: high dose or low dose."
 }
 """
 
@@ -2104,10 +2104,10 @@ JSON
     "id": "InterventionalStudyDesign_001",
     "instanceType": "InterventionalStudyDesign",
     "extensionAttributes": null,
-    "name": "ALXN1840 Phase 2 Study Design",
-    "description": "A Phase 2, open-label, multicenter, randomized clinical trial to assess the efficacy and safety of ALXN1840.",
+    "name": "EXT1840 Phase 2 Study Design",
+    "description": "A Phase 2, open-label, multicenter, randomized clinical trial to assess the efficacy and safety of EXT1840.",
     "label": "Phase 2 Clinical Trial",
-    "rationale": "To assess the efficacy and safety of ALXN1840.",
+    "rationale": "To assess the efficacy and safety of EXT1840.",
     "therapeuticAreas": {
       "id": "Code_CNCIt-001",
       "name": "Wilson disease"
@@ -2739,7 +2739,7 @@ Review the example provided to understand how the input is interpreted and how t
 JSON
 {
   "title": "Protocol Signature Page",
-  "extracted_text": "Study Sponsor: Alexion Pharmaceuticals, Inc.Address: 121 Seaport Boulevard, Boston, MA 02210, USA"
+  "extracted_text": "Study Sponsor: Examplar Therapeutics, Inc.Address: 100 Example Way, Cambridge, MA 02142, USA"
 }
 """
 
@@ -2751,8 +2751,8 @@ JSON
       "id": "Organization_001",
       "instanceType": "Organization",
       "extensionAttributes": null,
-      "name": "Alexion Pharmaceuticals, Inc.",
-      "label": "Alexion",
+      "name": "Examplar Therapeutics, Inc.",
+      "label": "Examplar",
       "identifier": null,
       "identifierScheme": null,
       "type": {
@@ -2789,7 +2789,7 @@ Final Output: Present the final output in a valid JSON format.
 Notes to Keep in Mind
 Every class should have an extensionAttributes attribute which must be null, and an instanceType attribute that explicitly declares what the JSON object represents (e.g., "instanceType": "ParameterMap").
 The tag attribute should contain the programming tag itself, often enclosed in brackets (e.g., "<STUDY_IDENTIFIER>").
-The reference attribute should contain the textual or data-driven value that the tag points to (e.g., "ALXN1840-C-201").
+The reference attribute should contain the textual or data-driven value that the tag points to (e.g., "EXT1840-C-201").
 If the protocol uses a table or list to map tags to their values, extract each pair and create a separate ParameterMap object for it.
 Review the example provided to understand how the input is interpreted and how the output JSON should be structured.
 """
@@ -2798,7 +2798,7 @@ Review the example provided to understand how the input is interpreted and how t
 JSON
 {
   "title": "Data Management Plan",
-  "extracted_text": "The protocol number is referenced by the tag <PROTOCOL_ID>. The value for this tag is ALXN1840-C-201."
+  "extracted_text": "The protocol number is referenced by the tag <PROTOCOL_ID>. The value for this tag is EXT1840-C-201."
 }
 """
 
@@ -2811,7 +2811,7 @@ JSON
       "instanceType": "ParameterMap",
       "extensionAttributes": null,
       "tag": "<PROTOCOL_ID>",
-      "reference": "ALXN1840-C-201"
+      "reference": "EXT1840-C-201"
     }
   ]
 }
@@ -3026,7 +3026,7 @@ Review the example provided to understand how the input is interpreted and how t
 JSON
 {
   "title": "Protocol Identification",
-  "extracted_text": "The study drug ALXN1840 is manufactured by Alexion Pharmaceuticals, Inc."
+  "extracted_text": "The study drug EXT1840 is manufactured by Examplar Therapeutics, Inc."
 }
 """
 
@@ -3039,7 +3039,7 @@ JSON
       "instanceType": "ProductOrganizationRole",
       "extensionAttributes": null,
       "name": "Manufacturer",
-      "description": "The manufacturer of the study drug ALXN1840.",
+      "description": "The manufacturer of the study drug EXT1840.",
       "label": "Manufacturer",
       "code": {
         "id": "Code_CNCIt-001",
@@ -3054,7 +3054,7 @@ JSON
         "id": "Organization_001",
         "instanceType": "Organization",
         "extensionAttributes": null,
-        "name": "Alexion Pharmaceuticals, Inc."
+        "name": "Examplar Therapeutics, Inc."
       }
     }
   ]
@@ -3229,7 +3229,7 @@ Final Output: Present the final output in a valid JSON format.
 
 Notes to Keep in Mind
 Every class should have an extensionAttributes attribute which must be null, and an instanceType attribute that explicitly declares what the JSON object represents (e.g., "instanceType": "ReferenceIdentifier").
-The text attribute should contain the literal identifier string (e.g., "ALXN1840-C-201").
+The text attribute should contain the literal identifier string (e.g., "EXT1840-C-201").
 The type attribute is a nested Code object that classifies the identifier's kind (e.g., "Sponsor Protocol Number," "ClinicalTrials.gov ID"). Use the CNCIt-001 placeholder for the code ID.
 The scope attribute is a mandatory relationship. You must link it to a pre-defined or newly created Organization object by its unique identifier (e.g., scope: { "id": "Organization_001" }). This organization is the entity that assigned the identifier.
 If a field is not explicitly mentioned, leave it blank.
@@ -3240,7 +3240,7 @@ Review the example provided to understand how the input is interpreted and how t
 JSON
 {
   "title": "Protocol Identification",
-  "extracted_text": "Sponsor Protocol Number: ALXN1840-C-201ClinicalTrials.gov Identifier: NCT01234567"
+  "extracted_text": "Sponsor Protocol Number: EXT1840-C-201ClinicalTrials.gov Identifier: NCT01234567"
 }
 """
 
@@ -3252,12 +3252,12 @@ JSON
       "id": "ReferenceIdentifier_001",
       "instanceType": "ReferenceIdentifier",
       "extensionAttributes": null,
-      "text": "ALXN1840-C-201",
+      "text": "EXT1840-C-201",
       "scope": {
         "id": "Organization_001",
         "instanceType": "Organization",
         "extensionAttributes": null,
-        "name": "Alexion Pharmaceuticals, Inc."
+        "name": "Examplar Therapeutics, Inc."
       },
       "type": {
         "id": "Code_CNCIt-001",
@@ -3782,8 +3782,8 @@ Review the example provided to understand how the input is interpreted and how t
         EXAMPLE_INPUT = """
 JSON
 {
-  "title": "Protocol for a Phase 2, open-label, multicenter, randomized clinical trial to assess the efficacy and safety of ALXN1840",
-  "extracted_text": "Protocol Title: A Study to Evaluate the Efficacy and Safety of ALXN1840 in Patients with Wilson Disease"
+  "title": "Protocol for a Phase 2, open-label, multicenter, randomized clinical trial to assess the efficacy and safety of EXT1840",
+  "extracted_text": "Protocol Title: A Study to Evaluate the Efficacy and Safety of EXT1840 in Patients with Wilson Disease"
 }
 """
 
@@ -3794,9 +3794,9 @@ JSON
     "id": "Study_001",
     "instanceType": "Study",
     "extensionAttributes": null,
-    "name": "A Study to Evaluate the Efficacy and Safety of ALXN1840 in Patients with Wilson Disease",
-    "description": "A Phase 2, open-label, multicenter, randomized clinical trial to assess the efficacy and safety of ALXN1840 in patients with Wilson disease.",
-    "label": "ALXN1840-C-201",
+    "name": "A Study to Evaluate the Efficacy and Safety of EXT1840 in Patients with Wilson Disease",
+    "description": "A Phase 2, open-label, multicenter, randomized clinical trial to assess the efficacy and safety of EXT1840 in patients with Wilson disease.",
+    "label": "EXT1840-C-201",
     "versions": [],
     "documentedBy": []
   }
@@ -4343,7 +4343,7 @@ Final Output: Present the final output in a valid JSON format.
 
 Notes to Keep in Mind
 Every class should have an extensionAttributes attribute which must be null, and an instanceType attribute that explicitly declares what the JSON object represents (e.g., "instanceType": "StudyDefinitionDocument").
-The name attribute should be the full, literal name of the document (e.g., "Protocol for ALXN1840").
+The name attribute should be the full, literal name of the document (e.g., "Protocol for EXT1840").
 The type and language attributes are nested Code objects. Use the CNCIt-001 placeholder for the code ID.
 The versions relationship is an optional array of links. You should link to any associated versions by their unique IDs.
 If a field is not explicitly mentioned, leave it as a blank string "", null, or an empty array [] as appropriate.
@@ -4353,7 +4353,7 @@ Review the example provided to understand how the input is interpreted and how t
         EXAMPLE_INPUT = """
 JSON
 {
-  "title": "Protocol for a Phase 2, open-label, multicenter, randomized clinical trial to assess the efficacy and safety of ALXN1840 in patients with Wilson disease",
+  "title": "Protocol for a Phase 2, open-label, multicenter, randomized clinical trial to assess the efficacy and safety of EXT1840 in patients with Wilson disease",
   "extracted_text": "This document is a Protocol based on the Sponsor's standard template. The document is in English.DOCUMENT HISTORYOriginal Protocol dated 12 May 2020."
 }
 """
@@ -4365,7 +4365,7 @@ JSON
     "id": "StudyDefinitionDocument_001",
     "instanceType": "StudyDefinitionDocument",
     "extensionAttributes": null,
-    "name": "Protocol for a Phase 2, open-label, multicenter, randomized clinical trial to assess the efficacy and safety of ALXN1840 in patients with Wilson disease",
+    "name": "Protocol for a Phase 2, open-label, multicenter, randomized clinical trial to assess the efficacy and safety of EXT1840 in patients with Wilson disease",
     "description": "This document is a Protocol.",
     "label": "Protocol",
     "type": {
@@ -4479,7 +4479,7 @@ Review the example provided to understand how the input is interpreted and how t
 JSON
 {
   "title": "4.1 Overall Design",
-  "extracted_text": "This is a Phase 2, open-label, multicenter, randomized clinical trial to assess the efficacy and safety of ALXN1840. The study population consists of adults with Wilson disease. The study includes a Screening Period, a Treatment Period, and a Follow-up Period. Patients will be randomized to one of two treatment arms: high dose or low dose."
+  "extracted_text": "This is a Phase 2, open-label, multicenter, randomized clinical trial to assess the efficacy and safety of EXT1840. The study population consists of adults with Wilson disease. The study includes a Screening Period, a Treatment Period, and a Follow-up Period. Patients will be randomized to one of two treatment arms: high dose or low dose."
 }
 """
 
@@ -4490,10 +4490,10 @@ JSON
     "id": "StudyDesign_001",
     "instanceType": "StudyDesign",
     "extensionAttributes": null,
-    "name": "ALXN1840 Phase 2 Study Design",
-    "description": "A Phase 2, open-label, multicenter, randomized clinical trial to assess the efficacy and safety of ALXN1840.",
+    "name": "EXT1840 Phase 2 Study Design",
+    "description": "A Phase 2, open-label, multicenter, randomized clinical trial to assess the efficacy and safety of EXT1840.",
     "label": "Phase 2 Clinical Trial",
-    "rationale": "To assess the efficacy and safety of ALXN1840.",
+    "rationale": "To assess the efficacy and safety of EXT1840.",
     "therapeuticAreas": {
       "id": "Code_CNCIt-001",
       "name": "Wilson disease"
@@ -4721,7 +4721,7 @@ Review the example provided to understand how the input is interpreted and how t
 JSON
 {
   "title": "4.1 Overall Design",
-  "extracted_text": "The 12-week Treatment Period is the main element of the study. It begins after randomization and ends at Week 12. Patients in the low-dose arm will receive 15 mg of ALXN1840 daily during this period."
+  "extracted_text": "The 12-week Treatment Period is the main element of the study. It begins after randomization and ends at Week 12. Patients in the low-dose arm will receive 15 mg of EXT1840 daily during this period."
 }
 """
 
@@ -4786,7 +4786,7 @@ Review the example provided to understand how the input is interpreted and how t
 JSON
 {
   "title": "4.1 Overall Design",
-  "extracted_text": "The study consists of a Screening Period, a Treatment Period, and a Follow-up Period. Screening will last up to 4 weeks. The Treatment Period is 12 weeks. The sponsor protocol ID is ALXN1840-C-201. The ClinicalTrials.gov ID is NCT01234567."
+  "extracted_text": "The study consists of a Screening Period, a Treatment Period, and a Follow-up Period. Screening will last up to 4 weeks. The Treatment Period is 12 weeks. The sponsor protocol ID is EXT1840-C-201. The ClinicalTrials.gov ID is NCT01234567."
 }
 """
 
@@ -4853,11 +4853,11 @@ JSON
       "id": "StudyIdentifier_001",
       "instanceType": "StudyIdentifier",
       "extensionAttributes": null,
-      "text": "ALXN1840-C-201",
+      "text": "EXT1840-C-201",
       "scope": {
         "id": "Organization_001",
         "instanceType": "Organization",
-        "name": "Alexion Pharmaceuticals, Inc."
+        "name": "Examplar Therapeutics, Inc."
       }
     },
     {
@@ -4895,7 +4895,7 @@ Final Output: Present the final output in a valid JSON format.
 
 Notes to Keep in Mind
 Every class should have an extensionAttributes attribute which must be null, and an instanceType attribute that explicitly declares what the JSON object represents (e.g., "instanceType": "StudyIdentifier").
-The text attribute should contain the literal identifier string (e.g., "NCT01234567" or "ALXN1840-C-201").
+The text attribute should contain the literal identifier string (e.g., "NCT01234567" or "EXT1840-C-201").
 The scope attribute is a mandatory relationship. You must link it to a pre-defined or newly created Organization object by its unique identifier (e.g., scope: { "id": "Organization_001" }). This object represents the entity that assigned the identifier, such as the sponsor or a clinical trial registry.
 If the protocol provides an identifier without explicitly naming the assigning organization, use a generic placeholder organization (e.g., Organization_Sponsor or Organization_Registry).
 Review the example provided to understand how the input is interpreted and how the output JSON should be structured.
@@ -4905,7 +4905,7 @@ Review the example provided to understand how the input is interpreted and how t
 JSON
 {
   "title": "Protocol Identification",
-  "extracted_text": "Sponsor Protocol Number: ALXN1840-C-201ClinicalTrials.gov Identifier: NCT01234567"
+  "extracted_text": "Sponsor Protocol Number: EXT1840-C-201ClinicalTrials.gov Identifier: NCT01234567"
 }
 """
 
@@ -4917,11 +4917,11 @@ JSON
       "id": "StudyIdentifier_001",
       "instanceType": "StudyIdentifier",
       "extensionAttributes": null,
-      "text": "ALXN1840-C-201",
+      "text": "EXT1840-C-201",
       "scope": {
         "id": "Organization_001",
         "instanceType": "Organization",
-        "name": "Alexion Pharmaceuticals, Inc."
+        "name": "Examplar Therapeutics, Inc."
       }
     },
     {
@@ -4971,7 +4971,7 @@ Review the example provided to understand how the input is interpreted and how t
 JSON
 {
   "title": "6.4 Study Intervention",
-  "extracted_text": "The investigational medicinal product, ALXN1840, is used in this study. Its role is as a treatment. The dose is 15 mg/day administered orally. The minimum duration to assess a response is 4 weeks. A placebo will be used as a comparator."
+  "extracted_text": "The investigational medicinal product, EXT1840, is used in this study. Its role is as a treatment. The dose is 15 mg/day administered orally. The minimum duration to assess a response is 4 weeks. A placebo will be used as a comparator."
 }
 """
 
@@ -4983,8 +4983,8 @@ JSON
       "id": "StudyIntervention_001",
       "instanceType": "StudyIntervention",
       "extensionAttributes": null,
-      "description": "The investigational medicinal product, ALXN1840, is used as a treatment.",
-      "name": "ALXN1840",
+      "description": "The investigational medicinal product, EXT1840, is used as a treatment.",
+      "name": "EXT1840",
       "label": "Study Drug",
       "role": {
         "id": "Code_CNCIt-001",
@@ -4997,7 +4997,7 @@ JSON
       "codes": [
         {
           "id": "Code_CNCIt-001",
-          "name": "ALXN1840"
+          "name": "EXT1840"
         }
       ],
       "minimumResponseDuration": {
@@ -5077,7 +5077,7 @@ Review the example provided to understand how the input is interpreted and how t
 JSON
 {
   "title": "Protocol Signature Page",
-  "extracted_text": "Sponsor: Alexion Pharmaceuticals, Inc.Principal Investigator: Dr. Jane Doe, M.D."
+  "extracted_text": "Sponsor: Examplar Therapeutics, Inc.Principal Investigator: Dr. Jane Doe, M.D."
 }
 """
 
@@ -5160,7 +5160,7 @@ Review the example provided to understand how the input is interpreted and how t
 JSON
 {
   "title": "List of Study Sites",
-  "extracted_text": "Study activities will be performed at the following locations: Boston Medical Center (United States) and the University of Toronto Hospital (Canada)."
+  "extracted_text": "Study activities will be performed at the following locations: Cambridge Medical Center (United States) and the University of Toronto Hospital (Canada)."
 }
 """
 
@@ -5172,9 +5172,9 @@ JSON
       "id": "StudySite_001",
       "instanceType": "StudySite",
       "extensionAttributes": null,
-      "name": "Boston Medical Center",
+      "name": "Cambridge Medical Center",
       "description": "",
-      "label": "Boston Medical Center",
+      "label": "Cambridge Medical Center",
       "country": {
         "id": "Code_CNCIt-001",
         "name": "United States of America"
@@ -5226,7 +5226,7 @@ Review the example provided to understand how the input is interpreted and how t
 JSON
 {
   "title": "Protocol Title Page",
-  "extracted_text": "Protocol Title: A Phase 2 Study to Evaluate the Efficacy and Safety of ALXN1840 in Wilson Disease"
+  "extracted_text": "Protocol Title: A Phase 2 Study to Evaluate the Efficacy and Safety of EXT1840 in Wilson Disease"
 }
 """
 
@@ -5242,7 +5242,7 @@ JSON
         "id": "Code_CNCIt-001",
         "name": "Official Title"
       },
-      "text": "A Phase 2 Study to Evaluate the Efficacy and Safety of ALXN1840 in Wilson Disease"
+      "text": "A Phase 2 Study to Evaluate the Efficacy and Safety of EXT1840 in Wilson Disease"
     }
   ]
 }
@@ -5279,7 +5279,7 @@ Review the example provided to understand how the input is interpreted and how t
 JSON
 {
   "title": "PROTOCOL",
-  "extracted_text": "Protocol Version 1.0, dated 12 May 2020. This is a study on Wilson disease with a primary focus on the business unit's rare disease portfolio. The rationale is to evaluate a new treatment in this indication. The sponsor protocol number is ALXN1840-C-201."
+  "extracted_text": "Protocol Version 1.0, dated 12 May 2020. This is a study on Wilson disease with a primary focus on the business unit's rare disease portfolio. The rationale is to evaluate a new treatment in this indication. The sponsor protocol number is EXT1840-C-201."
 }
 """
 
@@ -5462,7 +5462,7 @@ Review the example provided to understand how the input is interpreted and how t
 JSON
 {
   "title": "Study Product Description",
-  "extracted_text": "The active substance in the study drug is ALXN1840. The drug is available as 15 mg tablets."
+  "extracted_text": "The active substance in the study drug is EXT1840. The drug is available as 15 mg tablets."
 }
 """
 
@@ -5474,13 +5474,13 @@ JSON
       "id": "Substance_001",
       "instanceType": "Substance",
       "extensionAttributes": null,
-      "name": "ALXN1840",
+      "name": "EXT1840",
       "description": "The active substance in the study drug.",
       "label": "Active Substance",
       "codes": [
         {
           "id": "Code_CNCIt-001",
-          "name": "ALXN1840"
+          "name": "EXT1840"
         }
       ],
       "strengths": [
